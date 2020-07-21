@@ -76,17 +76,28 @@ class Board extends Component {
     })
     return (
       <div>
-        <div className="Board-title">
 
-          <div className="neon-orange">Lights</div>
-          <div className="neon-blue">Out</div>
-        </div>
-        <table className="Board">
-          <tbody>
-            {tblBoard}
-          </tbody>
+        {this.state.hasWon ? (
+          <div className="winner">
+            <span className="neon-orange winner">YOU</span>
+            <span className="neon-blue winner">WIN!</span>
+          </div>
+        ) : (
+            <div>
+              <div className="Board-title">
+                <div className="neon-orange">Lights</div>
+                <div className="neon-blue">Out</div>
+              </div>
+              <div>
+                <table className="Board">
+                  <tbody>
+                    {tblBoard}
+                  </tbody>
+                </table>
+              </div>
 
-        </table>
+            </div>
+          )}
       </div >
     )
   }
